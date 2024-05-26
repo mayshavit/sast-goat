@@ -1,0 +1,19 @@
+metadata:
+  id: CKV3_SAST_6
+  name: E2E-Test simple metavariable int equal
+  guidelines: E2E-Test simple pattern
+  category: sast
+  severity: MEDIUM
+  cwe: "CWE-1"
+scope:
+  languages:
+    - python
+definition:
+  and:
+    - cond_type: pattern
+      operator: equals
+      value: equal($ARG)
+    - cond_type: variable
+      operator: equals
+      value: 20
+      variable: $ARG

@@ -1,0 +1,6 @@
+equal(20)
+not_equal(20)
+equal(30)
+equal(19)
+equal("11")
+equal(-19)

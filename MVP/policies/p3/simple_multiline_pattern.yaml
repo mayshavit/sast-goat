@@ -1,0 +1,18 @@
+metadata:
+  id: CKV3_SAST_14
+  name: E2E-Test multiline pattern
+  guidelines: E2E-Test multiline pattern
+  category: sast
+  severity: MEDIUM
+  cwe: "CWE-2"
+scope:
+  languages:
+    - python
+definition:
+  and:
+    - cond_type: pattern
+      operator: equals
+      value: |
+        a = 0
+        b = 0
+        a = 0

@@ -1,0 +1,19 @@
+metadata:
+  id: CKV3_SAST_11
+  name: E2E-Test simple metavariable int not equal
+  guidelines: E2E-Test simple pattern
+  category: sast
+  severity: MEDIUM
+  cwe: "CWE-1"
+scope:
+  languages:
+    - python
+definition:
+  and:
+    - cond_type: pattern
+      operator: equals
+      value: os.system($ARG)
+    - cond_type: variable
+      variable: $ARG
+      operator: regex_match
+      value: (sudo|gsudo)

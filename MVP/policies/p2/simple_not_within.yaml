@@ -1,0 +1,24 @@
+metadata:
+  id: CKV3_SAST_3
+  version: 1.0
+  name: Ensure checking for unusual or exceptional conditions is handled properly
+  guidelines: Use of assert detected. The enclosed code will be removed when compiling to optimized byte code.
+  category: sast
+  cwe: "CWE-754: Improper Check for Unusual or Exceptional Conditions"
+  severity: MEDIUM
+scope:
+  languages:
+    - python
+definition:
+  and:
+    - cond_type: pattern
+      operator: equals
+      value: set_port(1)
+    - cond_type: filter
+      attribute: pattern
+      operator: not_within
+      value: safe(set_port(1))
+    - cond_type: filter
+      attribute: pattern
+      operator: not_within
+      value: super_safe(set_port(1))

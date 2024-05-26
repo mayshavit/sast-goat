@@ -1,0 +1,19 @@
+metadata:
+  id: CKV3_SAST_10
+  name: E2E-Test simple metavariable pattern
+  guidelines: E2E-Test simple pattern
+  category: sast
+  severity: MEDIUM
+  cwe: "CWE-1"
+scope:
+  languages:
+    - python
+definition:
+  and:
+    - cond_type: pattern
+      operator: equals
+      value: os.system($ARG)
+    - cond_type: variable
+      variable: $ARG
+      operator: pattern_match
+      value: os.getcwd()

@@ -1,0 +1,14 @@
+metadata:
+  id: CKV3_SAST_15
+  name: E2E regex pattern
+  guidelines: E2E regex pattern
+  category: sast
+  severity: MEDIUM
+  cwe: "E2E regex pattern"
+scope:
+  languages:
+    - python
+definition:
+  - cond_type: pattern
+    operator: regex_match
+    value: (os.exec|subprocess.run)
